@@ -1,65 +1,29 @@
 <template>
-<div>
-  <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white-500 mb-3">
-    <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
-      <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
-        <ul class="flex flex-col lg:flex-row list-none">
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75" href="#pablo">
-              <i class="fab fa-facebook-square text-lg leading-lg text-black opacity-75" /><span class="ml-2">1</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75" href="#pablo">
-              <i class="fab fa-twitter text-lg leading-lg text-black opacity-75" /><span class="ml-2">2</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75" href="#pablo">
-              <i class="fab fa-pinterest text-lg leading-lg text-black opacity-75" /><span class="ml-2">3</span>
-            </a>
-          </li>
-        </ul>
+  <div>
+    <nav>
+      <div class="flex justify-around p-8">
+        <div>
+          <router-link class="text-gray-800 " to="/items">ItemList</router-link> |
+          <router-link class="text-gray-800 " to="/about">About</router-link>
+        </div>
+        <div>
+          <router-link class="text-gray-800 " to="/">Home</router-link>
+        </div>
+        <div>
+          <router-link class="text-gray-800 " to="/login">Login</router-link> |
+          <router-link class="text-gray-800 " to="/cart">Cart</router-link>
+        </div>
       </div>
-      <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase text-black" href="#pablo">
-          Lamoda
-        </a>
-        <button class="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" v-on:click="toggleNavbar()">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
-        <ul class="flex flex-col lg:flex-row list-none ml-auto">
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75" href="#pablo">
-              <i class="fab fa-twitter text-lg leading-lg text-black opacity-75" /><span class="ml-2">Login</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75" href="#pablo">
-              <i class="fab fa-pinterest text-lg leading-lg text-black opacity-75" /><span class="ml-2">Basket</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+      <router-view/>
+    </nav>
   </div>
 </template>
 
 <script>
-export default {
-  name: "white-navbar",
-  data() {
-    return {
-      showMenu: false
-    }
+
+export default ({
+  setup() {
+    
   },
-  methods: {
-    toggleNavbar: function(){
-      this.showMenu = !this.showMenu;
-    }
-  }
-}
+})
 </script>

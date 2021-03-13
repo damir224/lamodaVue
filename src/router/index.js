@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import ItemList from '../views/ItemList.vue';
 
 const routes = [
   {
@@ -10,17 +12,12 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: () => import('../views/About.vue'),
+    component: About,
   },
   {
-    path: '/man',
-    name: 'Man',
-    component: () => import('../views/Man.vue'),
-  },
-  {
-    path: '/woman',
-    name: 'Woman',
-    component: () => import('../views/Woman.vue'),
+    path: '/items',
+    name: 'ItemList',
+    component: ItemList,
   },
   {
     path: '/login',
@@ -28,9 +25,9 @@ const routes = [
     component: () => import('../views/Login.vue'),
   },
   {
-    path: '/card',
-    name: 'Card',
-    component: () => import('../views/Card.vue'),
+    path: '/cart',
+    name: 'Cart',
+    component: () => import('../views/Cart.vue'),
   },
 ];
 

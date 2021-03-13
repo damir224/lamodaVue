@@ -1,10 +1,11 @@
 <template>
+  <!-- <NavBar /> -->
+
   <div>
     <nav>
       <div class="flex justify-around p-8">
         <div>
-          <router-link class="text-gray-800 " to="/man">Man</router-link> |
-          <router-link class="text-gray-800 " to="/woman">Woman</router-link> |
+          <router-link class="text-gray-800 " to="/items">ItemList</router-link> |
           <router-link class="text-gray-800 " to="/about">About</router-link>
         </div>
         <div>
@@ -12,13 +13,15 @@
         </div>
         <div>
           <router-link class="text-gray-800 " to="/login">Login</router-link> |
-          <router-link class="text-gray-800 " to="/card">Card</router-link>
+          <router-link class="text-gray-800 " to="/cart">Cart</router-link>
         </div>
       </div>
       <router-view/>
     </nav>
   </div>
 </template>
+
+
 
 <style>
 #app {
@@ -28,3 +31,4 @@
   text-align: center;
 }
 </style>
+
