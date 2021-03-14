@@ -26,7 +26,6 @@ export default({
   },
   methods: {
   addNote (data) {
-    console.log('data', data)
     this.notes.push({title:data})
   }
 }
