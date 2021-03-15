@@ -14,6 +14,7 @@ const getters = {
         (product) => product.id === id
       );
       return {
+        id: product.id,
         title: product.name,
         price: product.cost_in_credits,
         quantity,
@@ -61,6 +62,18 @@ const actions = {
       );
     }
   },
+  dellProductFromCart({ state, commit }, product) {
+    const cartItem = state.items.find((item) => item.id === product.id);
+    if (cartItem) {
+      commit('delProd', { id: product.id });
+    }
+    // add 1 item to stock
+    commit(
+      'products/incrementProductInventory',
+      { id: product.id },
+      { root: true }
+    );
+  },
 };
 
 // mutations
@@ -71,7 +84,9 @@ const mutations = {
       quantity: 1,
     });
   },
-
+  delProd(state, { id }) {
+    state.items = state.items.filter((e) => e.id !== id);
+  },
   setCartItems(state, { items }) {
     state.items = items;
   },
