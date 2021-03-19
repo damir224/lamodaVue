@@ -4,6 +4,7 @@ import shop from '../../api/shop.js';
 // shape: [{ id, quantity }]
 const state = () => ({
   items: [],
+  product: [],
   checkoutStatus: null,
 });
 // getters
@@ -46,8 +47,8 @@ const actions = {
       }
     );
   },
-
   addProductToCart({ state, commit }, product) {
+    console.log(1234);
     commit('setCheckoutStatus', null);
     if (product.inventory > 0) {
       const cartItem = state.items.find((item) => item.id === product.id);
@@ -73,6 +74,15 @@ const actions = {
       { id: product.id },
       { root: true }
     );
+  },
+  async getProduct({ commit }, id) {
+    try {
+      const cartItem = state.items.find((item) => item.id === id);
+      const product = cartItem;
+      commit('setProduct', product);
+    } catch (e) {
+      return Promise.reject(e);
+    }
   },
 };
 

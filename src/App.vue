@@ -1,6 +1,4 @@
 <template>
-  <!-- <NavBar /> -->
-
   <div>
     <nav>
       <div class="flex justify-around p-8">
@@ -16,8 +14,8 @@
           <router-link class="text-gray-800 " to="/cart">Cart</router-link>
         </div>
       </div>
-      <router-view/>
     </nav>
+    <router-view/>
   </div>
 </template>
 

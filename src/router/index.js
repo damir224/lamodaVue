@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import ItemList from '../views/ItemList.vue';
+import ItemCard from '../views/ItemCard.vue';
 
 const routes = [
   {
@@ -18,6 +19,12 @@ const routes = [
     path: '/items',
     name: 'ItemList',
     component: ItemList,
+  },
+  {
+    path: '/items/:id',
+    name: 'Item',
+    component: ItemCard,
+    props: true,
   },
   {
     path: '/login',
